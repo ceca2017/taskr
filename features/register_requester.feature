@@ -4,7 +4,7 @@ Feature: Register account for requester
   I need to be able to apply for a user account using my credentials.
 
   Scenario:
-    Given I go to the path "register_requester_path"
+    Given I go to the path "/requesters/sign_up"
     And I fill in field "First name" with "John"
     And I fill in field "Last name" with "Doe"
     And I fill in field "E-mail" with "requester@ab.com"

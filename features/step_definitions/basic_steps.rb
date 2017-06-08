@@ -1,5 +1,5 @@
-Given(/^I go to the path "([^"]*)"$/) do |arg1|
-  visit new_requestor_path
+Given(/^I go to the path "([^"]*)"$/) do |path|
+  visit path
 end
 
 Given(/^I fill in field "([^"]*)" with "([^"]*)"$/) do |field, value|
