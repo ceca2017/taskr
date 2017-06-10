@@ -21,3 +21,13 @@ contractors = Contractor.create(
     country: 'Constcountry'
   }]
 )
+
+requesters = Requester.create(
+  [{
+    email: 'Requester@r.com',
+    password: '12345678',
+    password_confirmation: '12345678',
+    first_name: 'Jane',
+    last_name: 'Doanne'
+  }]
+)
