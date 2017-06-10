@@ -12,7 +12,7 @@ Feature: Contractor certificates and previous experience
     And I click link "Update my profile"
     And I fill in field "Previous experience:" with "I have worked as carpenter for 5 years"
     And I fill in field "Attachment file name" with "Certificate"
-    And I attach a good pdf file with a certificate
+    And I attach a pdf file with a certificate
     And I click on "Submit"
     Then I should see "I have worked as a carpenter for 5 years"
     And I should see "Certificate"
