@@ -24,6 +24,10 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
   .field
+    = f.label :company_name, "Company Name"
+    %br/
+    = f.text_field :company_name
+  .field
     = f.label :current_password
     %i (we need your current password to confirm your changes)
     %br/
