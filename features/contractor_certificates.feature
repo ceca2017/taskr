@@ -5,10 +5,8 @@ Feature: Contractor certificates and previous experience
   And I may be required to provide proof of what I can do.
 
   Scenario:
-    Given the contractor exists with e-mail "con@a.com" and password "12345678"
-    And I log in as contractor "con@a.com" with password "123445678"
-    And I click link "My dashbord"
-    And I click link "My profile"
+    Given the contractor exists with e-mail "con@a.com" and password "12345678" and is logged in
+    And I click link "My Profile"
     And I click link "Update my profile"
     And I fill in field "Previous experience:" with "I have worked as carpenter for 5 years"
     And I fill in field "Attachment file name" with "Certificate"

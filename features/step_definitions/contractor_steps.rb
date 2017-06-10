@@ -1,7 +1,7 @@
-Given(/^the contractor exists with e\-mail "([^"]*)" and password "([^"]*)"$/) do |email, password|
+Given(/^the contractor exists with e\-mail "([^"]*)" and password "([^"]*)" and is logged in$/) do |email, password|
   steps %{
     Given I visit the landing page
-    And I click link "Register as a Contractor"
+    And I click link "Contractor Sign Up"
     And I fill in field "First Name" with "Bob"
     And I fill in field "Last Name" with "Jackson"
     And I fill in field "Email" with "#{email}"
@@ -20,7 +20,7 @@ end
 Given(/^I log in as contractor "([^"]*)" with password "([^"]*)"$/) do |email, password|
   steps %{
     Given I am on the landing page
-    And I click on "Sign In"
+    And I click on "Contractor Log In"
     Then I should see "Sign In Form"
     And I fill in field "Email" with "#{email}"
     And I fill in field "Password" with "#{password}"
