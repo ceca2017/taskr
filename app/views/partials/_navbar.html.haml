@@ -1,3 +1,9 @@
 %div
-  = link_to 'Sign In', new_requester_session_path
-  = link_to 'Sign Up', new_requester_registration_path
+- if contractor_signed_in?
+  = link_to 'My Profile'
+  = link_to 'Log Out', destroy_contractor_session_path, :method => :delete
+- else
+  = link_to 'Requester Log In', new_requester_session_path
+  = link_to 'Requester Sign Up', new_requester_registration_path
+  = link_to 'Contractor Log In', new_contractor_session_path
+  = link_to 'Contractor Sign Up', new_contractor_registration_path
