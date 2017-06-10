@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+contractors = Contractor.create(
+  [{
+    email: 'contractor@c.com',
+    password: '12345678',
+    password_confirmation: '12345678',
+    first_name: 'John',
+    last_name: 'Doe',
+    company_name: 'ABC Construction',
+    address: '123 Main St',
+    city: 'Constown',
+    state: 'Conststate',
+    zip_code: '12345',
+    country: 'Constcountry'
+  }]
+)
