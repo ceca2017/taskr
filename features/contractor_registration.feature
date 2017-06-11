@@ -1,7 +1,7 @@
-Feature: As a contractor,
+Feature: Contractor Registration
+  As a contractor,
   In order to apply for task postings,
   I need to be able to apply for a contractor account using my credentials.
-
 
 Scenario:
   Given I visit the landing page
