@@ -19,6 +19,7 @@ contractors = Contractor.create(
     state: 'Conststate',
     zip_code: '12345',
     country: 'Constcountry'
+    experience: "This is my experience"
   }]
 )
 

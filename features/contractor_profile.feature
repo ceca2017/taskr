@@ -7,7 +7,7 @@ Feature: Update profile information
      Given the contractor exists with e-mail "con@a.com" and password "12345678" and is logged in
      And I click link "My Profile"
      Then I should see "Edit Contractor"
-     And I should see field "Address" with value "123 Main St"
+     And I should see field "Address" with value "6107 nw 183 ln"
      And I should see field "Experience" with value "This is my experience"
      Given I fill in field "Address" with "321 Another St"
      And I fill in field "Experience" with "5 years in plumming"
