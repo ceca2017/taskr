@@ -8,36 +8,6 @@
 
 contractors = Contractor.create(
   [{
-    email: 'contractor@c.com',
-    password: '12345678',
-    password_confirmation: '12345678',
-    first_name: 'John',
-    last_name: 'Doe',
-    company_name: 'ABC Construction',
-    address: '123 Main St',
-    city: 'Constown',
-    state: 'Conststate',
-    zip_code: '12345',
-    country: 'Constcountry',
-    experience: "This is my experience"
-  }]
-)
-
-requesters = Requester.create(
-  [{
-    email: 'Requester@r.com',
-    password: '12345678',
-    password_confirmation: '12345678',
-    first_name: 'Jane',
-    last_name: 'Doanne'
-  }]
-)
-
-
-
-
-contractors = Contractor.create(
-  [{
     email: 'contractor1@c.com',
     password: '12345678',
     password_confirmation: '12345678',
@@ -99,18 +69,22 @@ tasks = Task.create(
     description: 'Pipe in kitchen broken',
     location: 'Stockholm, Sweden',
     task_category: task_categories.first,
+    maximum_budget: 100,
     requester: requesters.last
   }, {
     name: 'Broken toilet',
     description: 'Toilet need to be replaced',
     location: 'Stockholm, Sweden',
     task_category: task_categories.first,
+    minimum_budget: 150,
     requester: requesters.first
   }, {
     name: 'Computer not working',
     description: 'I cannot print',
     location: 'Pretoria, South Africa',
     task_category: task_categories.last,
+    minimum_budget: 200,
+    maximum_budget: 200,
     requester: requesters.last
   }, {
     name: 'Toaster not working',
