@@ -13,6 +13,7 @@ Given(/^the contractor exists with e\-mail "([^"]*)" and password "([^"]*)" and 
     And I fill in field "State" with "Florida"
     And I fill in field "Zip Code" with "33015"
     And I fill in field "Country" with "USA"
+    And I fill in field "Experience" with "This is my experience"
     And I click on "Submit"
   }
 end
