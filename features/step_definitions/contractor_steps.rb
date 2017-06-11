@@ -28,13 +28,3 @@ Given(/^I log in as contractor "([^"]*)" with password "([^"]*)"$/) do |email, p
     And I click on "Log In"
   }
 end
-
-Given(/^I attach a pdf file with a certificate$/) do
-  attach_file('file', File.join(RAILS_ROOT, 'features', 'upload-files', 'certificate.pdf'))
-  click_button 'Send file'
-end
-
-# When /^I upload a malformed file$/ do
-# attach_file(:csv_file, File.join(RAILS_ROOT, 'features', 'upload-files', 'products_csv_bad.csv'))
-# click_button "Send file"
-# end
