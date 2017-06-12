@@ -23,6 +23,7 @@ class TasksController < ApplicationController
   end
 
   def index
+    binding.pry
     @tasks = Task.all
   end
 
