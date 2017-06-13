@@ -23,8 +23,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    binding.pry
-    @tasks = Task.all
+    @tasks = Task.where("status = ? OR status = ?", "Open", "Bidding")
   end
 
   def show

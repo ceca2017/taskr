@@ -33,4 +33,4 @@ Feature: Status attribute to task object
     And I visit the landing page
     And I click link "Current Available Tasks"
     Then I should see "Bad computer"
-    And I should not see "Bad mowing machine"
+    And I should not see "Fix broken table"
