@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614160924) do
+ActiveRecord::Schema.define(version: 20170616153531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170614160924) do
     t.string "status"
     t.string "slug"
     t.bigint "user_id"
+    t.string "time_frame"
     t.index ["slug"], name: "index_tasks_on_slug", unique: true
     t.index ["task_category_id"], name: "index_tasks_on_task_category_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
