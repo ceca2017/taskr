@@ -7,7 +7,6 @@ class TasksController < ApplicationController
   end
 
   def create
-    binding.pry
     @task = Task.new(task_params)
     @task.user = current_user
     @task.task_category_id = params[:task][:task_category_id]
