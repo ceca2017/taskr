@@ -7,6 +7,7 @@ class TasksController < ApplicationController
   end
 
   def create
+    binding.pry
     @task = Task.new(task_params)
     @task.user = current_user
     @task.task_category_id = params[:task][:task_category_id]
@@ -81,7 +82,8 @@ class TasksController < ApplicationController
                  :maximum_budget,
                  :country,
                  :task_category_id,
-                 :requester_id)
+                 :requester_id,
+                 :time_frame)
   end
 
   def check_for_user
