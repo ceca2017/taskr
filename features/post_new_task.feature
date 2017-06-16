@@ -30,6 +30,9 @@ Feature: Post New task
     And I fill in field "Password" with "12345678"
     And I click on "Sign In"
     Then I should see "Task was successfully posted!"
+    Given I visit the landing page
+    And I click link "Current Available Tasks"
+    Then I should see "Status: Open"
 
     Scenario: Post task if user is logged in already
       Given I am logged in as "requester@ab.com"
@@ -43,3 +46,6 @@ Feature: Post New task
       And I fill in field "Location" with "Clogged Sink"
       And I click on "Submit"
       Then I should see "Task was successfully posted!"
+      Given I visit the landing page
+      And I click link "Current Available Tasks"
+      Then I should see "Status: Open"
