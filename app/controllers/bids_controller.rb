@@ -21,7 +21,6 @@ class BidsController < ApplicationController
   private
 
   def bid_params
-    params.require(:bid).permit(:quote, :task_id)
+    params.require(:bid).permit(:quote, :task_id, :terms_of_service)
   end
-
 end
