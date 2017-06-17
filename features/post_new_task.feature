@@ -35,7 +35,6 @@ Feature: Post New task
     And I click link "Current Available Tasks"
     Then I should see "Status: Open"
 
-
   Scenario: Post task if user is logged in already
     Given I am logged in as "requester@ab.com"
     And I visit the landing page
