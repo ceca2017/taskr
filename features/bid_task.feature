@@ -21,7 +21,6 @@ Feature: Bid for task
     And I fill in field "Quote:" with "500"
     And I click on "Make Offer"
     Then I should see "Please confirm you have read the Terms and Conditions"
-    And show page
 
   Scenario: When an amount is not quoted
     Given I click on "Current Available Tasks"
