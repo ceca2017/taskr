@@ -15,6 +15,14 @@ Feature: Bid for task
     And I click on "Make Offer"
     Then I should see "Bob Jackson's Bid: 500"
 
+  Scenario: When an amount is quoted but ToS isn't checked
+    Given I click on "Current Available Tasks"
+    And I click on "Bad mowing machine"
+    And I fill in field "Quote:" with "500"
+    And I click on "Make Offer"
+    Then I should see "Please confirm you have read the Terms and Conditions"
+    And show page
+
   Scenario: When an amount is not quoted
     Given I click on "Current Available Tasks"
     And I click on "Bad mowing machine"
