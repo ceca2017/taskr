@@ -19,6 +19,10 @@ class BidsController < ApplicationController
     end
   end
 
+  def bid_terms_doc
+    render layout: 'terms.html.haml'
+  end
+
   private
 
   def bid_params
