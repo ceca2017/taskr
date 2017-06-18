@@ -4,20 +4,18 @@ class BidsController < ApplicationController
     if Bid.exists?(user: current_user)
       redirect_to task_path(@task)
       flash[:notice] = 'Sorry you can only make one offer. Please update your current offer if you need to change your bid'
+    elsif bid_params[:quote] == ''
+      flash[:notice] = 'Please quote an amount'
+      redirect_to task_path(@task)
+    elsif bid_params[:terms_of_service] == '0'
+      flash[:notice] = 'Please confirm you have read the Terms and Conditions'
+      redirect_to task_path(@task)
     else
-      if bid_params[:terms_of_service] == '1' && bid_params[:quote] == true
-        @bid = @task.bids.new(bid_params)
-        @bid.user = current_user
-        @bid.save
-        redirect_to task_path(@task)
-        flash[:notice] = 'Offer Made!'
-      elsif bid_params[:terms_of_service] == '1' && bid_params[:quote] == false
-        flash[:notice] = 'Please quote an amount'
-        redirect_to task_path(@task)
-      elsif bid_params[:terms_of_service] == '0' && bid_params[:quote] == true
-        flash[:notice] = 'Please confirm you have read the Terms and Conditions'
-        redirect_to task_path(@task)
-      end
+      @bid = @task.bids.new(bid_params)
+      @bid.user = current_user
+      @bid.save
+      redirect_to task_path(@task)
+      flash[:notice] = 'Offer Made!'
     end
   end
 
