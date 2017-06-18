@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   root controller: :home, action: :index
   resources :home, only: [:index]
+
+  get '/bid_terms', to: 'bid_terms#bid_terms_doc', as: 'bid_terms_doc'
 end
