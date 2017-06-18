@@ -9,6 +9,7 @@ Feature: Requester to accept bid
     And I click on "Current Available Tasks"
     And I click on "Bad mowing machine"
     And I fill in field "Quote:" with "500"
+    And I check "terms_of_service" checkbox
     And I click on "Make Offer"
     And I click on "Log Out"
 
@@ -16,6 +17,7 @@ Feature: Requester to accept bid
     Given I log in as requester "requester1@r.com" with password "12345678"
     And I click on "Current Available Tasks"
     And I click on "Bad mowing machine"
+    Then show page
     Then I should not see "Accept Bid"
     Given I click on "Log Out"
     Given I log in as requester "requester2@r.com" with password "12345678"

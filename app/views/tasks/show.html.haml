@@ -12,7 +12,8 @@
 %ul
 - @task.bids.each do |bid|
   %li
-    = "#{bid.user.first_name} #{bid.user.last_name}'s Bid: #{bid.quote}"
+    = "#{bid.user.first_name} #{bid.user.last_name}'s Bid: #{bid.quote} "
+    = link_to "Accept Bid", 
   %br
 
 %div
