@@ -22,11 +22,16 @@ class BidsController < ApplicationController
   end
 
   def show
-    binding.pry
+    # render 'bid_terms_doc.html.haml', layout: 'terms.html.haml'
+    @task = Task.find(params[:task_id])
+    redirect_to task_path(@task, confirm: true)
   end
 
   def bid_terms_doc
     render layout: 'terms.html.haml'
+  end
+
+  def winning_bid
   end
 
   private

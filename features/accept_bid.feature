@@ -29,6 +29,6 @@ Feature: Requester to accept bid
     And I click on "Current Available Tasks"
     And I click on "Bad mowing machine"
     And I click on "Accept Bid"
-    Then I should see "You are about to accept the following bid:"
-    Given I click on "Terms and Conditions"
+    Then I should see "You are about to accept the bid"
+    Given I click on "Accept Bid Terms and Conditions"
     Then I should see "Terms and Conditons when placing a bid or accepting a bid."
