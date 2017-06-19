@@ -9,7 +9,7 @@ Feature: Requester to accept bid
     And I click on "Current Available Tasks"
     And I click on "Bad mowing machine"
     And I fill in field "Quote:" with "500"
-    And I check "terms_of_service" checkbox
+    And I check "bid_terms_of_service" checkbox
     And I click on "Make Offer"
     And I click on "Log Out"
 

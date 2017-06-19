@@ -11,6 +11,7 @@ class BidsController < ApplicationController
       flash[:notice] = 'Please confirm you have read the Terms and Conditions'
       redirect_to task_path(@task)
     else
+      binding.pry
       @bid = @task.bids.new(bid_params)
       @bid.user = current_user
       @task.status = 'Bidding'
@@ -24,7 +25,8 @@ class BidsController < ApplicationController
   def show
     # render 'bid_terms_doc.html.haml', layout: 'terms.html.haml'
     @task = Task.find(params[:task_id])
-    redirect_to task_path(@task, confirm: true)
+    # redirect_to task_path(@task, confirm: true)
+    @bid = Bid.find(params[:id])
   end
 
   def bid_terms_doc
@@ -32,6 +34,25 @@ class BidsController < ApplicationController
   end
 
   def winning_bid
+    binding.pry
+    @task = Task.find(params[:task_id])
+    @bid = Bid.find(params[:bid_id])
+    if params[:tos_accept_bid] == nil
+      flash[:notice] = 'Please confirm you have read the Terms and Conditions'
+      redirect_to task_bid_path(@task, @bid)
+  # if not bid_params[:terms_of_service]
+  #   flash[:notice] = 'Please confirm you have read the Terms and Conditions'
+  #   redirect_to task_path(@task)
+     # redirect_to task_bid_path()
+    else
+      @task.status = 'Contracted'
+      @task.save
+      @bid.winning_bid = 1
+      #bid.winning_bid_time = DateTime.now
+      @bid.save
+      flash[:notice] = 'You now have an agreement for this task. Congratulations!'
+      redirect_to task_bid_path(@task, @bid)
+    end
   end
 
   private

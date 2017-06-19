@@ -9,16 +9,18 @@ Feature: Requester to accept bid
     And I click on "Current Available Tasks"
     And I click on "Bad mowing machine"
     And I fill in field "Quote:" with "500"
+    And I check "bid_terms_of_service" checkbox
     And I click on "Make Offer"
     And I click on "Log Out"
     And I log in as requester "requester2@r.com" with password "12345678"
     And I click on "Current Available Tasks"
     And I click on "Bad mowing machine"
     And I click on "Accept Bid"
+    Then show page
 
   Scenario: On bid accept page, check box and accept bid
-    Given I check "terms_of_service" checkbox
-    And I click on "Accept bid"
+    Given I check "terms_of_service_accept_bid" checkbox
+    And I click on "OK"
     Then I should see "You now have an agreement for this task. Congratulations!"
 
 
