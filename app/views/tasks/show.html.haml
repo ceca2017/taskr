@@ -13,7 +13,8 @@
 - @task.bids.each do |bid|
   %li
     = "#{bid.user.first_name} #{bid.user.last_name}'s Bid: #{bid.quote} "
-    = link_to "Accept Bid", 
+    - if current_user.id == @task.user_id  # show link if the current user created the task
+      = link_to "Accept Bid", task_bid_path(params[:id], bid)
   %br
 
 %div

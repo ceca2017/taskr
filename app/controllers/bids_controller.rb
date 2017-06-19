@@ -21,6 +21,10 @@ class BidsController < ApplicationController
     end
   end
 
+  def show
+    binding.pry
+  end
+
   def bid_terms_doc
     render layout: 'terms.html.haml'
   end
