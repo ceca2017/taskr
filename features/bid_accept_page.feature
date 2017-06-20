@@ -16,21 +16,24 @@ Feature: Requester to accept bid
     And I click on "Current Available Tasks"
     And I click on "Bad mowing machine"
     And I click on "Accept Bid"
-    Then show page
 
   Scenario: On bid accept page, check box and accept bid
-    Given I check "terms_of_service_accept_bid" checkbox
+    Given I check "tos_accept_bid" checkbox
     And I click on "OK"
     Then I should see "You now have an agreement for this task. Congratulations!"
 
+  Scenario: On the bid accept page, cancel the acceptance and go back to the task details page
+    Given I click on "Cancel"
+    Then I should see "Task Details"
+    And I should see "Task: Bad mowing machine"
 
   Scenario: On bid accept page, do not check box and get message that bid cannot be accepted
-    Given I click on "Accept bid"
+    Given I click on "OK"
     Then I should see "You need to check the box to accept the terms and conditions before a bid can be accepted."
 
   Scenario: After accepting a bid the status is set to 'Contracted' and it is not visible in the main list (so no new bids can be placed)
-    Given I check "terms_of_service" checkbox
-    And I click on "Accept bid"
+    Given I check "tos_accept_bid" checkbox
+    And I click on "OK"
     And I click on "View My Tasks"
     And I click on "Bad mowing machine"
     Then I should see "Status: Contracted"

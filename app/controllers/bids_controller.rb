@@ -11,7 +11,6 @@ class BidsController < ApplicationController
       flash[:notice] = 'Please confirm you have read the Terms and Conditions'
       redirect_to task_path(@task)
     else
-      binding.pry
       @bid = @task.bids.new(bid_params)
       @bid.user = current_user
       @task.status = 'Bidding'
@@ -34,23 +33,27 @@ class BidsController < ApplicationController
   end
 
   def winning_bid
-    binding.pry
     @task = Task.find(params[:task_id])
     @bid = Bid.find(params[:bid_id])
-    if params[:tos_accept_bid] == nil
-      flash[:notice] = 'Please confirm you have read the Terms and Conditions'
+    if params[:commit] == "Cancel"
+      redirect_to task_path(@task)
+    elsif params[:tos_accept_bid] == nil
+      flash[:notice] = 'You need to check the box to accept the terms and conditions before a bid can be accepted.'
       redirect_to task_bid_path(@task, @bid)
   # if not bid_params[:terms_of_service]
   #   flash[:notice] = 'Please confirm you have read the Terms and Conditions'
   #   redirect_to task_path(@task)
      # redirect_to task_bid_path()
-    else
+   elsif params[:commit] == "OK"
       @task.status = 'Contracted'
       @task.save
       @bid.winning_bid = 1
       #bid.winning_bid_time = DateTime.now
       @bid.save
       flash[:notice] = 'You now have an agreement for this task. Congratulations!'
+      redirect_to task_bid_path(@task, @bid)
+    else
+      flash[:notice] = "Please contact system administrator"
       redirect_to task_bid_path(@task, @bid)
     end
   end
