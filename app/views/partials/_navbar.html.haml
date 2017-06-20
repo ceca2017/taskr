@@ -1,5 +1,6 @@
 %div
-  =link_to 'Home', root_path
+  = link_to 'Home', root_path
+  = link_to 'Post New Task', new_task_path
   = link_to 'Current Available Tasks', tasks_path( {type: 'all'})
   - if user_signed_in? && current_user.contractor?
     = link_to 'My Profile', edit_user_registration_path
