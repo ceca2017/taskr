@@ -48,6 +48,7 @@ class BidsController < ApplicationController
       @task.status = 'Contracted'
       @task.save
       @bid.winning_bid = 1
+      @bid.winning_bid_date = DateTime.now
       #bid.winning_bid_time = DateTime.now
       @bid.save
       flash[:notice] = 'You now have an agreement for this task. Congratulations!'

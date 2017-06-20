@@ -21,6 +21,8 @@ Feature: Requester to accept bid
     Given I check "tos_accept_bid" checkbox
     And I click on "OK"
     Then I should see "You now have an agreement for this task. Congratulations!"
+    And I should see "Status: Contracted"
+    And I should see "Contracted on: 2017"
 
   Scenario: On the bid accept page, cancel the acceptance and go back to the task details page
     Given I click on "Cancel"

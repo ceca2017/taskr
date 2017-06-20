@@ -1,6 +1,8 @@
 %h1 Accept Bid
 %li Task: #{@task.name}
 %li Status: #{@task.status}
+- if @task.status == "Contracted"
+  %li Contracted on: #{@bid.winning_bid_date}
 %li Description: #{@task.description}
 %li Location: #{@task.location}
 %li Time Frame: #{@task.time_frame}
