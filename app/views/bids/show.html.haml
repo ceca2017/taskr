@@ -2,6 +2,7 @@
 %li Task: #{@task.name}
 %li Status: #{@task.status}
 - if @task.status == "Contracted"
+  %li Winning Bid Amount: #{@bid.quote}
   %li Contracted on: #{@bid.winning_bid_date}
 %li Description: #{@task.description}
 %li Location: #{@task.location}
@@ -11,7 +12,7 @@
 %li Requester: #{User.find(@task.user_id).first_name} #{User.find(@task.user_id).last_name}
 %br
 - if @task.status == "Bidding"
-  %p= "You are about to accept the bid from #{@bid.user.first_name} #{@bid.user.last_name}'s of #{@bid.quote}"
+  %p= "You are about to accept the bid from #{@bid.user.first_name} #{@bid.user.last_name}. Amount: #{@bid.quote}"
   %p If you are OK, please review terms and condition and check the box before pressing OK.
   %p Press Cancel to cancel the acceptance of the bid.
   =form_tag({controller: 'bids', action: 'winning_bid'}) do
