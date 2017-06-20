@@ -1,6 +1,8 @@
+%h1 Task details
 %div
-  = link_to "Edit task", edit_task_path(@task)
-  = link_to "Delete task", task_path(@task), method: :delete
+  - if @task.status != 'Contracted'
+    = link_to "Edit task", edit_task_path(@task)
+    = link_to "Delete task", task_path(@task), method: :delete
   %ul
     %li= image_tag @task.task_image.url(:medium)
     %li Task Name: #{@task.name}
@@ -13,7 +15,7 @@
     %li Category: #{@task_cat.name}
     - if @task.status == 'Contracted'
       %li Winning Bid Amount: #{@winning_bid.quote}
-      %li Contracted On: #{@winning_bid.winning_bid_date} 
+      %li Contracted On: #{@winning_bid.winning_bid_date}
       %li Winning Contractor: #{@winning_contractor.email} - #{@winning_contractor.first_name} #{@winning_contractor.last_name}
 
 %h2 Bids:
