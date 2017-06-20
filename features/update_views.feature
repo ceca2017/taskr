@@ -20,8 +20,9 @@ Feature: Update views
     And I check "bid_terms_of_service" checkbox
     And I click on "Make Offer"
     And I click on "Log Out"
-    And I log in as requester "requester1@r.com" with password "12345678"
+    And I log in as requester "requester2@r.com" with password "12345678"
     And I click on "View My Tasks"
+    And I click on "Bad mowing machine"
     Then I should see "Bob Jackson's Bid: 500"
 
   Scenario: Add link to navbar to Post New Task
